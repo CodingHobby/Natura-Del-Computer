@@ -3,6 +3,10 @@ var array=[];
 function setup() {
   createCanvas(400, 400);
   //Diamo un valore ai primi sei elementi dell'Array
+  
+  for(var i=0; i<5; i++){
+
+
   array[0]=0;
   array[1]=1;
   array[2]=2;

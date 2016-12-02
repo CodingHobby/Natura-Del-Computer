@@ -1,23 +1,21 @@
-var w
+var p
 var f
 
 function setup() {
   createCanvas(600, 400)
-  dir = 0
-  w = new Walker()
-  f=new Fluid()
+    // Oggetti per la Particella e per il Fluido
+  p = new Particle()
+  f = new Fluid()
 }
+
 
 function draw() {
   background(51)
-  w.update()
-  w.edges()
-  w.display()
+    // Funzioni per Particella e Fluido
+  p.update()
+  p.edges()
+  p.display()
   f.display()
-  f.hit(w)
-}
-
-function mousePressed(){
-  var wind=createVector(1, 0)
-  w.apply(wind)
+    // Funzione per quando la particella colpisce il fluido
+  f.hit(p)
 }

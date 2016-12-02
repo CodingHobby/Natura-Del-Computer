@@ -1,13 +1,13 @@
 //Creazione di una Variabile di tipo Circle
-var circle;
+var circle
 function setup() {
-    createCanvas(400, 400);
+    createCanvas(400, 400)
     //Inizializzazione della variabile
-    circle=new Circle(60, 60, 60);
+    circle=new Circle(60, 60, 60)
 }
 
 function draw() {
-  background(51);
+  background(51)
   //Richiamo alla funzione show()
-  circle.show();
+  circle.show()
 }

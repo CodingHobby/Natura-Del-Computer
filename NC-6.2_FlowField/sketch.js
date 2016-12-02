@@ -6,7 +6,7 @@ var vehicles = []
 
 function setup() {
   createCanvas(640, 360)
-  // FlowField con risoluzione 20
+    // FlowField con risoluzione 20
   flowfield = new FlowField(20)
 
   // Creiamo 120 Vecoli in un array

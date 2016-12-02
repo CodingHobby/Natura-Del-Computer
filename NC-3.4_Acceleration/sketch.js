@@ -1,13 +1,14 @@
-var po;
+var po
 
 function setup() {
-  createCanvas(600, 600);
-  dir = 0;
-  po = new PO();
+  createCanvas(600, 600)
+    // Creazione del Particle Object
+  po = new PO()
 }
 
 function draw() {
-  background(51);
-  po.update();
-  po.display();
+  background(51)
+    // Funzioni del Particle Object
+  po.update()
+  po.display()
 }

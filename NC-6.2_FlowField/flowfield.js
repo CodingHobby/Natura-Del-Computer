@@ -7,7 +7,7 @@ function FlowField(r) {
   this.rows = height / this.resolution
 
   // Funzione per creare un array bi-dimensionale, ha come argomento la grandezza dell'array
-  this.make2DArray = function(n) {
+  this.make2DArray = function (n) {
     var array = []
     for (var i = 0; i < n; i++) {
       array[i] = []
@@ -18,11 +18,11 @@ function FlowField(r) {
   this.field = this.make2DArray(this.cols)
 
   // Inizializziamo la griglia
-  this.init = function() {
+  this.init = function () {
     // Settiamo il Seed per noise(): https://p5js.org/reference/#/p5/noiseSeed
     noiseSeed(Math.floor(random(10000)))
     var xoff = 0
-    // Ciclo for annidato per crere i vettori del FlowField
+      // Ciclo for annidato per crere i vettori del FlowField
     for (var i = 0; i < this.cols; i++) {
       var yoff = 0
       for (var j = 0; j < this.rows; j++) {
@@ -39,7 +39,7 @@ function FlowField(r) {
   this.init()
 
   // Funzione per mostrare il FlowField
-  this.display = function() {
+  this.display = function () {
     for (var i = 0; i < this.cols; i++) {
       for (var j = 0; j < this.rows; j++) {
         drawVector(this.field[i][j], i * this.resolution, j * this.resolution, this.resolution - 2)
@@ -48,7 +48,7 @@ function FlowField(r) {
   }
 
   // Funzione lookup, prende un'argomento: il veicolo
-  this.lookup = function(lookup) {
+  this.lookup = function (lookup) {
     var column = Math.floor(constrain(lookup.x / this.resolution, 0, this.cols - 1))
     var row = Math.floor(constrain(lookup.y / this.resolution, 0, this.rows - 1))
 
@@ -56,7 +56,7 @@ function FlowField(r) {
   }
 
   // Funzione drawVector, necessaria per disgnare un vettore
-  var drawVector = function(v, x, y, scayl) {
+  var drawVector = function (v, x, y, scayl) {
     push()
     var arrowsize = 4
 

@@ -1,10 +1,11 @@
+// Funzione Enemy
 function Enemy() {
-    this.xoff = 0
-    this.yoff = 0
+    // Vettori per Posizione, Velocità e Accelerazione
     this.pos = createVector(random(width), random(height))
     this.vel = createVector(0, 0)
     this.acc = createVector(0, 0)
 
+    // Massima Velocità di movimento e di sterzo Casuali
     this.maxSpeed = random(5)
     this.maxForce = random(0.2)
 
@@ -12,22 +13,21 @@ function Enemy() {
         this.acc.add(force)
     }
 
+    // Funzione per aggiornare la posizione del Nemico
     this.update = function () {
-        // this.pos.x=noise(this.xoff)*width
-        // this.pos.y=noise(this.yoff)*height
-        // this.xoff+=0.01
-        // this.yoff+=0.02
         this.vel.add(this.acc)
         this.vel.limit(this.maxSpeed)
         this.pos.add(this.vel)
         this.acc.set(0, 0)
     }
 
+    // Funzione per mostrare il Nemico
     this.show = function () {
         fill(255, 0, 0)
         ellipse(this.pos.x, this.pos.y, 50, 50)
     }
 
+    // Funzione per inseguire il personaggio
     this.chase = function (target) {
         var desired = p5.Vector.sub(target.pos, this.pos)
 

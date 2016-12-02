@@ -15,7 +15,7 @@ function Snake() {
   this.tail = [];
 
   // Funzione per mangiare il cibo
-  this.eat = function(pos) {
+  this.eat = function (pos) {
     // Distanza fra giocatore e cibo
     var d = dist(this.x, this.y, pos.x, pos.y);
 
@@ -30,13 +30,13 @@ function Snake() {
   }
 
   // Funzione per cambiare la direzione del giocatore
-  this.dir = function(x, y) {
+  this.dir = function (x, y) {
     this.xspeed = x;
     this.yspeed = y;
   }
 
   // Controllare se il giocatore è morto
-  this.death = function() {
+  this.death = function () {
     for (var i = 0; i < this.tail.length; i++) {
       var pos = this.tail[i];
       var d = dist(this.x, this.y, pos.x, pos.y);
@@ -50,7 +50,7 @@ function Snake() {
   }
 
   // Funzione per aggiornare la posizione del serpente
-  this.update = function() {
+  this.update = function () {
     if (this.total === this.tail.length) {
       // Muoviamo tutti gli elementi della coda avanti di un "posto"
       for (var i = 0; i < this.tail.length - 1; i++) {
@@ -69,7 +69,7 @@ function Snake() {
   }
 
   // Funzione per mostrare il giocatore
-  this.show = function() {
+  this.show = function () {
     fill(255);
     for (var i = 0; i < this.tail.length; i++) {
       rect(this.tail[i].x, this.tail[i].y, scl, scl);

@@ -5,7 +5,9 @@ var score = 0
 
 function setup() {
 	createCanvas(600, 600);
+	// Nuovo Giocatore
 	player = new Player()
+		// Nuovi nemici
 	food = createVector(floor(random(width)), floor(random(height)))
 	for (var i = 0; i < 10; i++) {
 		enemies[i] = new Enemy()
@@ -16,21 +18,28 @@ function draw() {
 	background(51)
 	fill(255)
 	noStroke()
+		// Funzioni del Giocatore
 	player.edges()
 	player.update()
 	player.show()
+		// Se il giocatore mangia il cibo
 	if (player.eats(food)) {
-		console.log('eat')
+		console.log(score)
 		food = createVector(floor(random(width)), floor(random(height)))
 		score += 10
 	}
+
+	// Mostriamo il Cibo
 	ellipse(food.x, food.y, 10, 10)
 
+	// Funzioni dei nemici
 	for (var i = 0; i < enemies.length; i++) {
 		enemies[i].chase(player)
 		enemies[i].update()
 		enemies[i].show()
 	}
+
+	// Controllare se il personaggio è stato ucciso
 	for (var i = 0; i < enemies.length; i++) {
 		if (player.killed(enemies[i])) {
 			console.log('killed')
@@ -44,6 +53,7 @@ function draw() {
 	}
 }
 
+// Funzione per quando un tasto è premuto
 function keyPressed() {
 	if (keyCode == UP_ARROW) {
 		player.acc = createVector(0, 0)

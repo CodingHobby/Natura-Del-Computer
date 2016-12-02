@@ -1,13 +1,14 @@
-var w;
+var w
 
 function setup() {
-  createCanvas(600, 600);
-  dir = 0;
-  w = new Walker();
+  createCanvas(600, 600)
+    // Creiamo un oggetto Walker
+  w = new Walker()
 }
 
 function draw() {
-  background(51);
-  w.step();
-  w.display();
+  // Funzione del Walker
+  background(51)
+  w.step()
+  w.display()
 }

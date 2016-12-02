@@ -7,7 +7,7 @@ function setup() {
   // Creiamo un serpente
   createCanvas(600, 600);
   s = new Snake();
-  frameRate(10);
+  frameRate(15);
 
   // Selezioniamoio un punto sulla griglia per il cibo
   pickLocation();

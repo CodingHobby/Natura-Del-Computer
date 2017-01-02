@@ -51,6 +51,10 @@ function draw() {
 			}
 		}
 	}
+	fill(255)
+	text(player.score, 10, 20)
+	text(player.games, width-10, 20)
+
 }
 
 // Funzione per quando un tasto è premuto

@@ -4,8 +4,8 @@ function Snake() {
   this.x = 0
   this.y = 0
 
-  this.score=0
-  // Variabili per la velocità del giocatore
+  this.score = 0
+    // Variabili per la velocità del giocatore
   this.xspeed = 1
   this.yspeed = 0
 
@@ -23,8 +23,8 @@ function Snake() {
     // Se il giocatore mangia il cibo:
     if (d < 1) {
       this.total++
-      return true
-      // Altrimenti:
+        return true
+          // Altrimenti:
     } else {
       return false
     }
@@ -43,7 +43,7 @@ function Snake() {
       var d = dist(this.x, this.y, pos.x, pos.y)
       if (d < 1) {
         console.log('starting over')
-        // Eliminare la coda del serpente
+          // Eliminare la coda del serpente
         this.total = 0
         this.tail = []
       }
@@ -71,7 +71,6 @@ function Snake() {
 
   // Funzione per mostrare il giocatore
   this.show = function () {
-    fill(255)
     for (var i = 0; i < this.tail.length; i++) {
       rect(this.tail[i].x, this.tail[i].y, scl, scl)
     }
